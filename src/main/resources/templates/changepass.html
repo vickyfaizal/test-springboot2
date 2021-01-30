@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Change Password - TheSkeleton</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/webjars/ionicons/2.0.1/css/ionicons.min.css" />
+	<style type="text/css">
+		body {
+			min-height: 75rem;
+			padding-top: 6rem;
+			background-color: #eee;
+		}
+		.bg-grey {
+			background-color: #eee;
+		}
+	</style>
+</head>
+<body>
+	<div class="app flex-row align-items-center">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6">
+					<div class="card p-4 bg-grey" style="border: none;">
+						<div class="card-body text-center">
+							<h1>TheSkeleton</h1>
+						</div>
+					</div>
+					<div class="card mx-4">
+						<form class="form-signin" th:object="${changePasswordForm}" method="POST">
+							<div class="card-body p-4">
+								<h1>Forgot Password</h1>
+								<p class="text-muted">Enter recovery email address</p>
+								<div class="form-group mb-3" th:classappend="${#fields.hasErrors('email')} ? 'has-danger' : ''">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text">
+												<i class="ion-email h4 mb-0"></i>
+											</span>
+										</div>
+										<input type="email" th:field="*{email}" name="email" id="inputEmail" class="form-control form-control-lg" placeholder="Email" required="required" />
+									</div>
+									<!--<label for="inputEmail" class="col-form-label">Email</label>-->
+									<small class="form-control-feedback" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Not a valid email address</small>
+								</div>
+								<button class="btn btn-lg btn-primary btn-block" type="submit">Send Recovery Email</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

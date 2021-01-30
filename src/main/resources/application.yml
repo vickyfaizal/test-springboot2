@@ -1,0 +1,85 @@
+info:
+  app:
+    encoding: "@project.build.sourceEncoding@"
+    artifact:
+      artifactId: "@project.artifactId@"
+      groupId: "@project.groupId@"
+      version: "@project.version@"
+    java:
+      source: "@java.version@"
+      target: "@java.version@"
+logging:
+  level:
+    org.codenergic.theskeleton: DEBUG
+management:
+  context-path: /manage
+  info:
+    git:
+      mode: full
+s3:
+  client:
+    endpoint: http://localhost:8082
+    access-key: supersecret
+    secret-key: supersecret123
+    buckets:
+      - name: profile-pictures
+        policies:
+          - prefix: '*'
+            policy: READ_ONLY
+      - name: galleries
+        policies:
+          - prefix: '*'
+            policy: READ_ONLY
+security:
+  jwt:
+    signing-key: VNcRqdXpj9nHZQqtmf5l
+  oauth2:
+    resource:
+      filter-order: 3
+spring:
+  datasource:
+    url: jdbc:h2:~/.theskeleton-0.13.0;AUTO_SERVER=TRUE
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /manage/database
+  jpa:
+#    hibernate:
+#      ddl-auto: validate
+    properties:
+      javax:
+        persistence:
+          sharedCache:
+            mode: DISABLE_SELECTIVE
+      hibernate:
+        cache:
+          region:
+            factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+          use_second_level_cache: true
+  thymeleaf:
+    cache: false
+  mail:
+    host: localhost
+    port: 1025
+    username:
+    password:
+    properties:
+      sender: theskeleton@codenergic.org
+      senderAlias: TheSkeleton
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: false
+            required: false
+  social:
+    facebook:
+      app-id: 897090537127510
+      app-secret: 38fc52cda45ce507ae37df2d3105ebbf
+    google:
+      app-id: 1031466054059-efbl8kv8luoegprdsdubkq4kba3qvcuo.apps.googleusercontent.com
+      app-secret: pTj_xuAmNSmx0nOhTTsMpCZN
+email:
+    baseurl: http://localhost:8080

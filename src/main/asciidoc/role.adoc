@@ -1,0 +1,63 @@
+=== Read
+
+.request
+include::{snippets}/role-read/http-request.adoc[]
+
+.response
+include::{snippets}/role-read/http-response.adoc[]
+
+=== Read All
+
+.request
+include::{snippets}/role-read-all/http-request.adoc[]
+
+.response
+include::{snippets}/role-read-all/http-response.adoc[]
+
+=== Create
+
+.request
+include::{snippets}/role-create/http-request.adoc[]
+
+.response
+include::{snippets}/role-create/http-response.adoc[]
+
+=== Update
+
+.request
+include::{snippets}/role-update/http-request.adoc[]
+
+.response
+include::{snippets}/role-update/http-response.adoc[]
+
+=== Delete
+
+.request
+include::{snippets}/role-delete/http-request.adoc[]
+
+.response
+include::{snippets}/role-delete/http-response.adoc[]
+
+=== Get Privilege
+
+.request
+include::{snippets}/role-privilege-read/http-request.adoc[]
+
+.response
+include::{snippets}/role-privilege-read/http-response.adoc[]
+
+=== Add Privilege
+
+.request
+include::{snippets}/role-privilege-create/http-request.adoc[]
+
+.response
+include::{snippets}/role-privilege-create/http-response.adoc[]
+
+=== Remove Privilege
+
+.request
+include::{snippets}/role-privilege-delete/http-request.adoc[]
+
+.response
+include::{snippets}/role-privilege-delete/http-response.adoc[]
